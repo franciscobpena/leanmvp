@@ -3362,7 +3362,7 @@ if uploaded_file and not missing_sheets:
                 "P.A. (ENF.)": "Leitos Enfermaria",
                 "P.A. (UTI)": "Leitos UTI",
                 "P.A. (CIRÚRGICOS)": "Leitos Cirúrgicos",
-                "P.A. (CLÍNICOS)": "Leitos Clínicos"
+                "P.A. (CLÍNICOS)": "Leitos para Enfermaria (Origem P.A.)"
             }
             
             # Criar DataFrame final

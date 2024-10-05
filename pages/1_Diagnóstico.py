@@ -1436,14 +1436,7 @@ if uploaded_file and not missing_sheets:
                     )
                     fig_medicos_semana.update_traces(texttemplate='%{text:.1f}', textposition='inside')  # Formata e posiciona os rótulos
                     st.plotly_chart(fig_medicos_semana, use_container_width=True)
-            
-                    # Observação analítica
-                    st.markdown("**Observação analítica:**")
-                    dia_maior_medicos = df_dados_semanais_medicos_melt.groupby(COLUNAS["DADOS_SEMANAIS_MEDICOS"]["DIA"])['Quantidade de Médicos'].sum().idxmax()
-                    st.write(f"O dia com maior alocação média de médicos é **{dia_maior_medicos}**. Isso pode refletir picos de demanda neste dia específico.")
-            
-            st.markdown("---")
-            
+                
                         
             st.markdown("---")
     

@@ -3307,11 +3307,11 @@ if uploaded_file and not missing_sheets:
         # ==========================
         # Sub-aba 3: Setor
         # ==========================
-        
+  
         with subtab3:
             st.markdown("### Setor")
             st.markdown("#### 📊 Métricas do Processo - Demanda/Setor")
-    
+        
             # Função aprimorada para calcular métricas de fila com tratamento para grandes valores de 'c'
             def calcular_metricas_fila(lambda_, mu, c):
                 rho = lambda_ / (c * mu)
@@ -3345,6 +3345,12 @@ if uploaded_file and not missing_sheets:
                 
                 return Lq, Wq
         
+            # Função para converter horas decimais para horas e minutos
+            def converter_horas_para_horas_minutos(decimal_horas):
+                horas = int(decimal_horas)
+                minutos = int(round((decimal_horas - horas) * 60))
+                return f"{horas} hora{'s' if horas !=1 else ''} e {minutos} minuto{'s' if minutos !=1 else ''}"
+        
             # Assumindo que df_passagem_setores e df_internacao_demanda são DataFrames já carregados do Excel
             passagem_setores = df_passagem_setores.copy()
             internacao_demanda = df_internacao_demanda.copy()
@@ -3374,7 +3380,7 @@ if uploaded_file and not missing_sheets:
                                                    df_final['Capacidade (Leitos/Dia)']) * 100
             
             # Calcular métricas de fila
-            df_final['Lq (Pacientes na Fila)'] = 0.0
+            df_final['Lq (Solicitações na Fila)'] = 0.0  # Alterado de "Lq (Pacientes na Fila)"
             df_final['Wq (Tempo de Espera em Dias)'] = 0.0
             df_final['Wq (Tempo de Espera em Horas)'] = 0.0  # Nova coluna para Wq em horas
             
@@ -3384,11 +3390,11 @@ if uploaded_file and not missing_sheets:
                 c = row['quantidade_leitos']
                 try:
                     lq, wq = calcular_metricas_fila(lambda_, mu, c)
-                    df_final.at[index, 'Lq (Pacientes na Fila)'] = lq
+                    df_final.at[index, 'Lq (Solicitações na Fila)'] = lq  # Alterado de "Pacientes na Fila"
                     df_final.at[index, 'Wq (Tempo de Espera em Dias)'] = wq
                     df_final.at[index, 'Wq (Tempo de Espera em Horas)'] = wq * 24  # Converter dias em horas
                 except (OverflowError, ZeroDivisionError, ValueError):
-                    df_final.at[index, 'Lq (Pacientes na Fila)'] = np.inf
+                    df_final.at[index, 'Lq (Solicitações na Fila)'] = np.inf  # Alterado de "Pacientes na Fila"
                     df_final.at[index, 'Wq (Tempo de Espera em Dias)'] = np.inf
                     df_final.at[index, 'Wq (Tempo de Espera em Horas)'] = np.inf
         
@@ -3402,7 +3408,7 @@ if uploaded_file and not missing_sheets:
             df_final = df_final[[
                 'Setores', 'Quantidade de Leitos', 'TMP (Dias)', 'Capacidade (Leitos/Dia)',
                 'Demanda (Média Solicitações/Dia)', 'Fator de Utilização (%)',
-                'Lq (Pacientes na Fila)', 'Wq (Tempo de Espera em Dias)', 'Wq (Tempo de Espera em Horas)'
+                'Lq (Solicitações na Fila)', 'Wq (Tempo de Espera em Dias)', 'Wq (Tempo de Espera em Horas)'
             ]]
         
             # Arredondar valores numéricos
@@ -3410,7 +3416,7 @@ if uploaded_file and not missing_sheets:
                 'Capacidade (Leitos/Dia)': 2,
                 'Demanda (Média Solicitações/Dia)': 2,
                 'Fator de Utilização (%)': 2,
-                'Lq (Pacientes na Fila)': 2,
+                'Lq (Solicitações na Fila)': 2,  # Alterado de "Pacientes na Fila"
                 'Wq (Tempo de Espera em Dias)': 4,   # Mais casas decimais para maior precisão
                 'Wq (Tempo de Espera em Horas)': 2
             })
@@ -3427,18 +3433,18 @@ if uploaded_file and not missing_sheets:
                 utilizacao = row['Fator de Utilização (%)']
                 tempo_espera_dias = row['Wq (Tempo de Espera em Dias)']
                 tempo_espera_horas = row['Wq (Tempo de Espera em Horas)']
-                lq = row['Lq (Pacientes na Fila)']
+                lq = row['Lq (Solicitações na Fila)']  # Alterado de "Pacientes na Fila"
                 
-                # Formatar o tempo de espera em dias e horas
-                if np.isfinite(tempo_espera_dias):
-                    tempo_espera_str = f"Aproximadamente {tempo_espera_dias:.4f} dias ou {tempo_espera_horas:.2f} horas"
+                # Formatar o tempo de espera em horas e minutos
+                if np.isfinite(tempo_espera_horas):
+                    tempo_espera_str = f"Aproximadamente {converter_horas_para_horas_minutos(tempo_espera_horas)}"
                 else:
                     tempo_espera_str = "Valor indefinido (possível instabilidade no sistema)"
                 
                 st.write(f"**Setor {setor}:**")
                 st.write(f"- Fator de Utilização: {utilizacao:.2f}%")
                 st.write(f"- Tempo Médio de Espera: {tempo_espera_str}")
-                st.write(f"- Número Médio de Pacientes na Fila: {lq:.2f}")
+                st.write(f"- Número Médio de Solicitações na Fila: {lq:.2f}")  # Alterado de "Número Médio de Pacientes na Fila"
                 st.write("---")
         
             # Visualizações aprimoradas
@@ -3538,5 +3544,6 @@ if uploaded_file and not missing_sheets:
         
             Utilize estas informações como um componente de um processo de tomada de decisão mais amplo, sempre priorizando a segurança e o bem-estar dos pacientes e da equipe de saúde.
             """)
-
         
+                    
+                

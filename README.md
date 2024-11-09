@@ -4,18 +4,14 @@
 
 Este projeto desenvolve uma ferramenta analítica completa para diagnóstico e otimização de processos hospitalares, utilizando Ciência de Dados, Teoria das Filas, Teoria das Restrições (TOC) e princípios Lean Healthcare. 
 
-🔗 [Acesse a aplicação aqui][app-link]
+🔗 [Clique e acesse o desenvolvimento da aplicação](https://leanhospitais.streamlit.app/)
 
-[app-link]: https://leanhospitais.streamlit.app/ "LeanHospitais - Aplicação de Diagnóstico Hospitalar"
-
+### Estrutura de Dados
 A aplicação funciona a partir do upload de um arquivo Excel padronizado (diagnostico_hospitalar.xlsx - [**Arquivo**][file-link]) contendo dados estruturados sobre diferentes setores e processos hospitalares. Por questões de confidencialidade e direitos autorais, uma versão demonstrativa do arquivo pode ser solicitada diretamente ao autor.
 
 [file-link]: https://docs.google.com/spreadsheets/d/1kaAEsZGXAhvVh5NXUxamSsnPLn6_6l5V/edit?usp=sharing&ouid=100127589008142410245&rtpof=true&sd=true "Arquivo Exemplo - Acesso Restrito"
 
-### Processamento e Análise
-Após o processamento destes dados, a ferramenta realiza análises automáticas para:
-[resto do conteúdo continua igual...]
-
+O arquivo deve conter informações específicas distribuídas em diferentes abas:
 * Dados de fluxo de pacientes (mensais, semanais e por hora)
 * Informações de triagem e classificação de risco
 * Métricas do centro cirúrgico
@@ -23,7 +19,8 @@ Após o processamento destes dados, a ferramenta realiza análises automáticas 
 * Informações de internação e ocupação
 * Métricas de SADT (Serviço de Apoio Diagnóstico e Terapêutico)
 
-Após o processamento destes dados, a ferramenta realiza análises automáticas para:
+### Processamento e Análise
+A ferramenta realiza análises automáticas para:
 * Identificar gargalos operacionais
 * Otimizar alocação de recursos
 * Melhorar o fluxo de pacientes
@@ -130,10 +127,7 @@ A estrutura de dados padronizada permite uma análise consistente e comparável 
    * Análise de custos operacionais
    * Dashboard mobile
 
-## Contribuições e Suporte
-Este projeto é mantido por [Francisco Pena] e está aberto a contribuições.
-
-## Autoria e Direitos de Uso
+## Autor e Direitos de Uso
 
 **Autor:** Francisco Pena
 
@@ -141,7 +135,8 @@ Este projeto é mantido por [Francisco Pena] e está aberto a contribuições.
 
 Este projeto e todo seu conteúdo, incluindo mas não limitado a código fonte, documentação, visualizações e metodologias, são de autoria de Francisco Pena. Qualquer reprodução, distribuição, modificação ou uso deste material, no todo ou em parte, requer autorização prévia e expressa do autor.
 
-Para solicitar permissão de uso ou discutir possíveis colaborações, entre em contato diretamente com o autor:
+### Contato
+Para solicitar permissão de uso ou discutir possíveis colaborações:
 - LinkedIn: [Francisco Pena](https://www.linkedin.com/in/franciscobahiapena/)
 - Email: bahiapenafrancisco@gmail.com
 

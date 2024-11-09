@@ -8,8 +8,6 @@ Este projeto desenvolve uma ferramenta analítica completa para diagnóstico e o
 
 ## 📺 Demonstração
 
-## 📺 Demonstração
-
 🎥 [Assista ao vídeo de demonstração no YouTube](https://youtu.be/bVbeE5P8gYk)
 
 

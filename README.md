@@ -8,7 +8,9 @@ Este projeto desenvolve uma ferramenta analítica completa para diagnóstico e o
 
 ## 📺 Demonstração
 
-![Diagnóstico de Processos Hospitalares](https://github.com/franciscobpena/leanmvp/blob/main/projeto.gif)
+## 📺 Demonstração
+
+🎥 [Assista ao vídeo de demonstração no YouTube](https://youtu.be/bVbeE5P8gYk)
 
 
 ### Estrutura de Dados

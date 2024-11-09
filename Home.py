@@ -118,7 +118,6 @@ if st.button("Iniciar Diagnóstico"):
 st.markdown("""
 <hr>
 <div class='footer' style='text-align: center; padding: 10px; font-size: 0.9em;'>
-    © Master Lean Analytics 🦎 | Todos os direitos reservados<br>
     Desenvolvido com ❤️ para melhorar a eficiência hospitalar
 </div>
 """, unsafe_allow_html=True)

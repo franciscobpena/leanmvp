@@ -4,6 +4,10 @@
 
 Este projeto desenvolve uma ferramenta analítica completa para diagnóstico e otimização de processos hospitalares, utilizando Ciência de Dados, Teoria das Filas, Teoria das Restrições (TOC) e princípios Lean Healthcare. 
 
+🔗 [Acesse a aplicação aqui][app-link]
+
+[app-link]: https://leanhospitais.streamlit.app/ "LeanHospitais - Aplicação de Diagnóstico Hospitalar"
+
 A aplicação funciona a partir do upload de um arquivo Excel padronizado (diagnostico_hospitalar.xlsx - [**TEMPLATE**][file-link]) contendo dados estruturados sobre diferentes setores e processos hospitalares. Por questões de confidencialidade e direitos autorais, uma versão demonstrativa do arquivo pode ser solicitada diretamente ao autor.
 
 [file-link]: https://docs.google.com/spreadsheets/d/1kaAEsZGXAhvVh5NXUxamSsnPLn6_6l5V/edit?usp=sharing&ouid=100127589008142410245&rtpof=true&sd=true "Arquivo Exemplo - Acesso Restrito"

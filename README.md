@@ -6,6 +6,11 @@ Este projeto desenvolve uma ferramenta analítica completa para diagnóstico e o
 
 🔗 [Clique e acesse o desenvolvimento da aplicação](https://leanhospitais.streamlit.app/)
 
+## 📺 Demonstração
+
+![Diagnóstico de Processos Hospitalares](https://github.com/franciscobpena/leanmvp/blob/main/projeto.gif)
+
+
 ### Estrutura de Dados
 A aplicação funciona a partir do upload de um arquivo Excel padronizado (diagnostico_hospitalar.xlsx - [**Arquivo**][file-link]) contendo dados estruturados sobre diferentes setores e processos hospitalares. Por questões de confidencialidade e direitos autorais, uma versão demonstrativa do arquivo pode ser solicitada diretamente ao autor.
 
